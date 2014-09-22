@@ -5,17 +5,40 @@ JTLwawi to MySQL Webshop Connector
 
 
 
-*** TODO DOCUMENTATION ***
+*** TODO *** 
+
+1) DOCUMENTATION 
+
+2) functions
+
+GetZahlungsInfo
+setArtikel 
+AnfangsNummern
+Attribute
+getCountArtikel
+GetHaendlerKunden
+Kategorie
+KategorieArtikel
+KategoriePict
+News
+setArtikelBild
+SetFirma
+SetHaendlerKunden
+setKategorieBild
+VersandArt
+ArtikelPict
+getArtikel
 
 
----- hier nur ein snipp it aus einer email als vorläufigen ersatz ------ 
+
+---- hier nur ein snipp it als vorläufigen Documentation Ersatz ------ 
 
 Die Schnittstelle funktioniert mit POST Request an eine in JTLwawi hinterlegte URL.
 Als Referenz habe ich die vorhanden JTL-Wawi Connectoren von JTL selbst unter (http://www.jtl-software.de/JTL-Wawi-Download) und eine Open Source Implementierung für Magento ( http://www.jtlmage.de ) genommen. Alle connectoren basieren auf PHP. 
 
 Eine Teil der Schnittstellen Dokumentation ist unter http://sourceforge.net/apps/mediawiki/jtlmage/index.php?title=Development zu finden.
 
-Dafür existieren in einer Datenbank 8 Tabellen. ( Funktion steht in der Beschreibung der Tabelle selbst ) Hier aber noch mal kurz umrissen. 
+In meiner Implementierung existieren in einer Datenbank 8 Tabellen. ( Funktion steht in der Beschreibung der Tabelle selbst ) Hier aber noch mal kurz umrissen. 
 
 ssc_customer - jeder Kunde einer Bestellung der nicht zugeordnet werden kann wird hier neu erstellt.
 ssc_customerShipping - für jeden Bestellung wird hier die Lieferanschrift nochmals hinterlegt (lösung für das problem: bekannter kunde aber abweichende Lieferanschrift)
