@@ -28,7 +28,7 @@ CREATE TABLE `ssc_customer` (
   `sub_address` varchar(255) default NULL,
   `website` varchar(255) default NULL,
   PRIMARY KEY  (`customer_id`)
-) TYPE=InnoDB COMMENT='Kunden für JTLwawi';
+)COMMENT='Kunden für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_customerShipping`
@@ -52,7 +52,7 @@ CREATE TABLE `ssc_customerShipping` (
   `sub_address` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`order_id`),
   KEY `customer_id` (`customer_id`)
-) TYPE=InnoDB COMMENT='Bestellung Versandadresse kein trigger für Bestell,Kunden';
+)COMMENT='Bestellung Versandadresse kein trigger für Bestell,Kunden';
 
 -- ----------------------------
 --  Table structure for `ssc_map_sku`
@@ -73,7 +73,7 @@ CREATE TABLE `ssc_map_sku` (
   `aktion` int(2) NOT NULL default '0',
   PRIMARY KEY  (`JTL_id`),
   KEY `sku` (`sku`)
-) TYPE=InnoDB COMMENT='Artikelnummern zu Artikel_id';
+)COMMENT='Artikelnummern zu Artikel_id';
 
 -- ----------------------------
 --  Table structure for `ssc_map_var`
@@ -85,7 +85,7 @@ CREATE TABLE `ssc_map_var` (
   `value` varchar(255) NOT NULL default '',
   PRIMARY KEY  (`JTL_var_id`,`value`),
   KEY `jtlid` (`JTL_tmp_id`)
-) TYPE=InnoDB COMMENT='Bestellvariation';
+)COMMENT='Bestellvariation';
 
 -- ----------------------------
 --  Table structure for `ssc_map_var2art`
@@ -96,7 +96,7 @@ CREATE TABLE `ssc_map_var2art` (
   `JTL_id` int(11) NOT NULL default '0',
   PRIMARY KEY  (`JTL_tmp_id`),
   KEY `jtlid` (`JTL_id`)
-) TYPE=InnoDB COMMENT='Artikel_id zu Variation';
+)COMMENT='Artikel_id zu Variation';
 
 -- ----------------------------
 --  Table structure for `ssc_order`
@@ -120,7 +120,7 @@ CREATE TABLE `ssc_order` (
   `webshop` char(2) NOT NULL default '',
   PRIMARY KEY  (`order_id`),
   KEY `customer_id` (`customer_id`)
-) TYPE=InnoDB COMMENT='Bestellungen für JTLwawi';
+)COMMENT='Bestellungen für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_orderPOS`
@@ -137,7 +137,7 @@ CREATE TABLE `ssc_orderPOS` (
   PRIMARY KEY  (`pos_id`),
   KEY `order_id` (`order_id`),
   CONSTRAINT `orderid` FOREIGN KEY (`order_id`) REFERENCES `ssc_order` (`order_id`) ON DELETE CASCADE
-) TYPE=InnoDB COMMENT='Bestellpostion für JTLwawi';
+)COMMENT='Bestellpostion für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_orderPOS_copy`
@@ -154,7 +154,7 @@ CREATE TABLE `ssc_orderPOS_copy` (
   PRIMARY KEY  (`pos_id`),
   KEY `order_id` (`order_id`),
   CONSTRAINT `ssc_orderPOS_copy_ibfk_1` FOREIGN KEY (`order_id`) REFERENCES `ssc_order` (`order_id`) ON DELETE CASCADE
-) TYPE=InnoDB COMMENT='Bestellpostion für JTLwawi';
+)COMMENT='Bestellpostion für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_orderPOSvar`
@@ -170,7 +170,7 @@ CREATE TABLE `ssc_orderPOSvar` (
   UNIQUE KEY `pos2var` (`pos_id`,`var_name`),
   KEY `pos_id` (`pos_id`),
   CONSTRAINT `posid` FOREIGN KEY (`pos_id`) REFERENCES `ssc_orderPOS` (`pos_id`) ON DELETE CASCADE
-) TYPE=InnoDB COMMENT='Bestellvariation für JTLwawi';
+)COMMENT='Bestellvariation für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_orderPOSvar_copy`
@@ -186,7 +186,7 @@ CREATE TABLE `ssc_orderPOSvar_copy` (
   UNIQUE KEY `pos2var` (`pos_id`,`var_name`),
   KEY `pos_id` (`pos_id`),
   CONSTRAINT `ssc_orderPOSvar_copy_ibfk_1` FOREIGN KEY (`pos_id`) REFERENCES `ssc_orderPOS` (`pos_id`) ON DELETE CASCADE
-) TYPE=InnoDB COMMENT='Bestellvariation für JTLwawi';
+)COMMENT='Bestellvariation für JTLwawi';
 
 -- ----------------------------
 --  Table structure for `ssc_order_copy`
@@ -210,6 +210,6 @@ CREATE TABLE `ssc_order_copy` (
   `webshop` char(2) NOT NULL default '',
   PRIMARY KEY  (`order_id`),
   KEY `customer_id` (`customer_id`)
-) TYPE=InnoDB COMMENT='Bestellungen für JTLwawi';
+)COMMENT='Bestellungen für JTLwawi';
 
 SET FOREIGN_KEY_CHECKS = 1;

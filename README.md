@@ -4,6 +4,38 @@ jtlwawi-connector
 JTLwawi to MySQL Webshop Connector
 
 
+=============  System requirements  =============
+
+    * Webserver:
+          o PHP 5 or greater
+          o Mysql
+
+    * client:
+          o JTL-Wawi v 0.99629 or greater 
+
+=============  Installation instructions  =======
+
+
+1) create a new url reachable folder on ure webserver 
+
+2) put the dbeS folder there.
+
+3) Import the contents of migration/jtlwawi_DB.sql into your database.
+
+4) Adjust the entries in dbes/DATABASE_config.php to your specific needs.
+
+5) Create a webshop from your JTL-Wawi installation:
+          * Einstellungen -> Webshop-Einstellungen -> Hinzufügen
+          * At this point, it is important to enter the correct URL pointing to the synchronisation scripts residing on the installation, WITHOUT the dbeS subfolder
+                + i.e.: the connector was installed in /connector/dbeS. Enter the following information: http://<yourdomain>/connector. 
+          * A basic connectivity check can be performed by clicking "Testen" 
+
+
+
+
+
+
+
 
 *** TODO *** 
 
